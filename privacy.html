@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tietosuojakäytäntö – GainEngine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brand: #1FAA6E; --bg: #0A0F14; --bg2: #0E1520; --card: #131C2A;
+      --border: rgba(255,255,255,0.07); --text: #F0F4F8; --muted: #7A8FA6;
+      --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.75; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,20,0.9); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border); padding: 0 32px;
+    }
+    .nav-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-logo-icon { width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, var(--brand), #17835A); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .back-link { color: var(--muted); text-decoration: none; font-size: 0.88rem; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .back-link:hover { color: var(--text); }
+    .doc-wrap { max-width: 860px; margin: 0 auto; padding: 80px 32px 120px; }
+    .doc-header { margin-bottom: 56px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .doc-tag { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand); margin-bottom: 16px; }
+    .doc-header h1 { font-family: var(--font-display); font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .doc-meta { color: var(--muted); font-size: 0.88rem; }
+    .doc-body h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 48px 0 16px; color: var(--text); }
+    .doc-body h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin: 32px 0 12px; color: var(--text); }
+    .doc-body p { color: #BCC8D4; margin-bottom: 16px; }
+    .doc-body ul { padding-left: 24px; margin-bottom: 16px; }
+    .doc-body li { color: #BCC8D4; margin-bottom: 8px; }
+    .doc-body a { color: var(--brand); }
+    .doc-body strong { color: var(--text); }
+    .info-box { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--brand); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0; }
+    .info-box p { margin: 0; color: #BCC8D4; font-size: 0.95rem; }
+    footer { border-top: 1px solid var(--border); padding: 32px; text-align: center; color: var(--muted); font-size: 0.82rem; }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">💪</div>
+        GainEngine
+      </a>
+      <a href="index.html" class="back-link">← Takaisin etusivulle</a>
+    </div>
+  </nav>
+
+  <div class="doc-wrap">
+    <div class="doc-header">
+      <div class="doc-tag">Juridinen</div>
+      <h1>Tietosuojakäytäntö</h1>
+      <div class="doc-meta">Viimeksi päivitetty: 10. maaliskuuta 2026</div>
+    </div>
+
+    <div class="doc-body">
+      <div class="info-box">
+        <p>GainEngine on sitoutunut suojaamaan yksityisyyttäsi. Tämä tietosuojakäytäntö kertoo mitä tietoja keräämme, miten käytämme niitä ja mitkä ovat oikeutesi.</p>
+      </div>
+
+      <h2>1. Kerättävät tiedot</h2>
+      <h3>Tilin tiedot</h3>
+      <p>Rekisteröityessäsi sovellukseen keräämme sähköpostiosoitteesi ja salasanasi (salattu). Näitä käytetään ainoastaan kirjautumiseen.</p>
+
+      <h3>Harjoitusdatat</h3>
+      <p>Tallennamme harjoitusohjelmasi, harjoitushistoriasi, painot, toistot ja suoritukset. Nämä tiedot tallennetaan laitteellesi paikallisesti (AsyncStorage).</p>
+
+      <h3>Tilausdatat</h3>
+      <p>Tallennuksen yhteydessä Apple-ostotieto validoidaan palvelimella. Tallennettavat tiedot: tilauksen tuote-ID, voimassaoloaika ja käyttäjä-ID. Emme tallenna maksutietoja.</p>
+
+      <h3>AI-valmentajan käyttödata</h3>
+      <p>Päivittäinen pyyntölaskuri tallennetaan palvelimelle rajoitusten toteuttamiseksi. Keskusteluhistoriaa ei tallenneta pysyvästi.</p>
+
+      <h2>2. Tietojen käyttö</h2>
+      <ul>
+        <li>Sovelluksen toiminnan mahdollistaminen ja kehittäminen</li>
+        <li>Tilaustilan tarkistaminen ja ylläpitäminen</li>
+        <li>AI-valmentajan käyttörajoitusten toteuttaminen</li>
+        <li>Teknisten ongelmien diagnosointi</li>
+      </ul>
+      <p><strong>Emme koskaan</strong> myy tietojasi kolmansille osapuolille tai käytä niitä mainontaan.</p>
+
+      <h2>3. Tietojen jakaminen</h2>
+      <p>Jaamme tietoja ainoastaan näiden palveluntarjoajien kanssa:</p>
+      <ul>
+        <li><strong>Supabase</strong> – tietokanta ja autentikaatio (EU:n tietosuojalain mukainen)</li>
+        <li><strong>Apple</strong> – App Store ja tilausten validointi</li>
+        <li><strong>Google (Gemini)</strong> – AI-valmentajan vastaukset (ei tallenneta)</li>
+      </ul>
+
+      <h2>4. Tietojen säilytys</h2>
+      <p>Harjoitusdatasi säilytetään laitteellasi toistaiseksi. Palvelimella säilytettävät tilaus- ja käyttölimitdatat poistetaan 30 päivän kuluessa tilin poistamisesta.</p>
+
+      <h2>5. Oikeutesi</h2>
+      <p>Sinulla on oikeus:</p>
+      <ul>
+        <li>Pyytää nähdä kaikki sinusta tallennetut tiedot</li>
+        <li>Pyytää tietojesi poistamista</li>
+        <li>Peruuttaa tilaus milloin tahansa App Storen kautta</li>
+      </ul>
+
+      <h2>6. Lasten tietosuoja</h2>
+      <p>Sovellus ei ole tarkoitettu alle 13-vuotiaille. Emme tietoisesti kerää tietoja alaikäisiltä.</p>
+
+      <h2>7. Muutokset käytäntöön</h2>
+      <p>Ilmoitamme merkittävistä muutoksista sovelluksessa. Jatkamalla sovelluksen käyttöä muutoksen jälkeen hyväksyt päivitetyn käytännön.</p>
+
+      <h2>8. Yhteydenotot</h2>
+      <p>Tietosuojaan liittyvissä kysymyksissä ota yhteyttä: <a href="mailto:privacy@gainengine.app">privacy@gainengine.app</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 GainEngine · <a href="index.html">Etusivu</a> · <a href="terms.html">Käyttöehdot</a></p>
+  </footer>
+</body>
+</html>
